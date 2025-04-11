@@ -176,7 +176,7 @@ export default function Home() {
                   </Button>
                 </div>
               </div>
-              <div className="w-full md:w-2/5 flex justify-center">
+              <div className="w-full md:w-2/5 hidden md:flex justify-center">
                 <div className="relative w-64 h-80 rounded-lg overflow-hidden border shadow-lg">
                   <Image
                     src="/prof_pic.jpg"
