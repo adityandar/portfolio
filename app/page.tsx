@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, ExternalLink, Twitter, GraduationCap, Award, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function Home() {
@@ -347,20 +347,44 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Education Section - Compact */}
-        <section id="education" className="py-12 bg-gray-50">
+        {/* Education Section - Redesigned */}
+        <section id="education" className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-6 text-center">Education</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
             <div className="max-w-3xl mx-auto">
-              <div className="bg-white p-4 rounded-lg shadow-sm border">
-                <div className="flex flex-wrap justify-between items-center">
-                  <div>
+              <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
+                <div className="flex flex-col md:flex-row">
+                  <div className="bg-gray-800 text-white p-6 md:w-1/3 flex flex-col justify-center items-center text-center">
+                    <GraduationCap size={48} className="mb-3" />
                     <h3 className="text-xl font-bold">Bachelor of Computer Science</h3>
-                    <div className="text-gray-600">TELKOM UNIVERSITY</div>
+                    <p className="text-gray-300 mt-2">Informatics</p>
                   </div>
-                  <div className="mt-2 sm:mt-0">
-                    <div className="text-gray-500">2019 - 2023</div>
-                    <div className="font-medium text-gray-800 text-right">GPA: 3.86/4.0</div>
+                  <div className="p-6 md:w-2/3">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mr-4">
+                        <Award className="h-6 w-6 text-gray-700" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-lg">TELKOM UNIVERSITY</h4>
+                        <p className="text-gray-600">Bandung, Indonesia</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3 ml-16">
+                      <div className="flex items-center">
+                        <Calendar className="h-4 w-4 text-gray-500 mr-2" />
+                        <span className="text-gray-600">2019 - 2023</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Award className="h-4 w-4 text-gray-500 mr-2" />
+                        <span className="text-gray-600">
+                          GPA: <span className="font-semibold">3.86/4.0</span>
+                        </span>
+                      </div>
+                      <p className="text-gray-600 mt-2">
+                        Completed a comprehensive computer science program with a focus on software development and
+                        programming fundamentals.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -626,114 +650,76 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Contact Section - Redesigned */}
         <section id="contact" className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
-            <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-sm border">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Contact Information</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <Mail className="mr-3 h-5 w-5 text-gray-600 mt-0.5" />
-                      <div>
-                        <p className="font-medium">Email</p>
-                        <a href="mailto:adityandar@gmail.com" target="_blank" className="text-gray-600 hover:text-gray-900">
-                          adityandar@gmail.com
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <MapPin className="mr-3 h-5 w-5 text-gray-600 mt-0.5" />
-                      <div>
-                        <p className="font-medium">Location</p>
-                        <p className="text-gray-600">Palangka Raya, Indonesia</p>
-                        <p className="text-gray-600 text-sm">(Can relocate)</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <Linkedin className="mr-3 h-5 w-5 text-gray-600 mt-0.5" />
-                      <div>
-                        <p className="font-medium">LinkedIn</p>
-                        <a href="https://linkedin.com/in/adityandar" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 flex items-center">
-                          Connect with me <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <Github className="mr-3 h-5 w-5 text-gray-600 mt-0.5" />
-                      <div>
-                        <p className="font-medium">GitHub</p>
-                        <a href="https://github.com/adityandar" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 flex items-center">
-                          View my repositories <ExternalLink className="ml-1 h-3 w-3" />
-                        </a>
-                      </div>
-                    </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* Contact Card - Email */}
+                <div className="bg-white rounded-lg shadow-sm border p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+                  <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+                    <Mail className="h-8 w-8 text-gray-700" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Email</h3>
+                  <p className="text-gray-600 mb-4">Feel free to reach out anytime</p>
+                  <a href="mailto:adityandar@gmail.com" className="text-gray-800 font-medium hover:underline">
+                    adityandar@gmail.com
+                  </a>
+                </div>
+
+                {/* Contact Card - Location */}
+                <div className="bg-white rounded-lg shadow-sm border p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+                  <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+                    <MapPin className="h-8 w-8 text-gray-700" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Location</h3>
+                  <p className="text-gray-600 mb-4">Currently based in</p>
+                  <p className="text-gray-800 font-medium">Palangka Raya, Indonesia</p>
+                  <p className="text-gray-600 text-sm mt-2">(Can relocate)</p>
+                </div>
+
+                {/* Contact Card - Social */}
+                <div className="bg-white rounded-lg shadow-sm border p-6 flex flex-col items-center text-center hover:shadow-md transition-shadow duration-300">
+                  <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+                    <Linkedin className="h-8 w-8 text-gray-700" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2">Social Profiles</h3>
+                  <p className="text-gray-600 mb-4">Let's connect online</p>
+                  <div className="flex space-x-4">
+                    <a
+                      href="https://github.com/adityandar"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    >
+                      <Github className="h-5 w-5 text-gray-700" />
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/adityandar"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    >
+                      <Linkedin className="h-5 w-5 text-gray-700" />
+                    </a>
+                    <a
+                      href="https://twitter.com/adityandar"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+                    >
+                      <Twitter className="h-5 w-5 text-gray-700" />
+                    </a>
                   </div>
                 </div>
-                {/* <div>
-                  <h3 className="text-xl font-bold mb-4">Send a Message</h3>
-                  <form className="space-y-4" onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = e.target as HTMLFormElement;
-                    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
-                    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-                    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+              </div>
 
-                    // Create mailto URL with form data
-                    const mailtoUrl = `mailto:adityandar@gmail.com?subject=Contact from ${name}&body=${encodeURIComponent(
-                      `Name: ${name}\nEmail: ${email}\n\n${message}`
-                    )}`;
-
-                    // Open default email client
-                    window.open(mailtoUrl, '_blank');
-
-                    // Reset form after submission
-                    form.reset();
-                  }}>
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                        placeholder="Your name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                        placeholder="Your email"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={4}
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
-                        placeholder="Your message"
-                      ></textarea>
-                    </div>
-                    <Button type="submit" className="w-full">Send Message</Button>
-                  </form>
-                </div> */}
+              <div className="mt-12 text-center">
+                <p className="text-gray-600 mb-6">Interested in working together? Let's discuss your project!</p>
+                <Button size="lg" className="px-8" onClick={() => window.open('mailto:adityandar@gmail.com', '_blank')}>
+                  <Mail className="mr-2 h-4 w-4" /> Send an Email
+                </Button>
               </div>
             </div>
           </div>
@@ -748,17 +734,6 @@ export default function Home() {
               <h2 className="text-lg font-bold">adityandar</h2>
               <div className="text-gray-500">|</div>
               <p className="text-gray-600">Flutter Mobile Engineer</p>
-            </div>
-            <div className="flex space-x-6">
-              <a href="https://github.com/adityandar" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Github size={18} />
-              </a>
-              <a href="https://linkedin.com/in/adityandar" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Linkedin size={18} />
-              </a>
-              <a href="mailto:adityandar@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Mail size={18} />
-              </a>
             </div>
           </div>
         </div>
