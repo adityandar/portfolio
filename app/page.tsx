@@ -171,16 +171,9 @@ export default function Home() {
                   <Badge className="bg-gray-100 text-gray-800 hover:bg-gray-200">Firebase</Badge>
                 </div>
                 <div className="flex gap-4">
-                  <Button onClick={() => {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                      window.scrollTo({
-                        top: contactSection.offsetTop - 80,
-                        behavior: 'smooth'
-                      });
-                      setActiveSection('contact');
-                    }
-                  }}>Contact Me</Button>
+                  <Button onClick={() => window.open('mailto:adityandar@gmail.com', '_blank')}>
+                    <Mail className="mr-2 h-4 w-4" /> Contact Me
+                  </Button>
                 </div>
               </div>
               <div className="w-full md:w-2/5 flex justify-center">
